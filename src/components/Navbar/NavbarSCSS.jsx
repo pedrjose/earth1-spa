@@ -3,11 +3,15 @@ import styled from 'styled-components'
 export const Nav = styled.nav`
     z-index: 1;
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     justify-content: space-between;
     align-items: center;
     max-width: 100%;
     background-color: #F03355;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `;
 
 export const Earth1Logo = styled.img`
