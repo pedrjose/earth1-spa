@@ -1,7 +1,9 @@
 import axios from "axios";
 
-export async function getAllNews() {
-    const response = await axios.get("http://localhost:3000/user/users");
+const baseUrl = 'https://api-earth1.onrender.com';
+
+export async function getAllArticles() {
+    const response = await axios.get(`${baseUrl}/news/find-all-news`);
 
     return response;
 }

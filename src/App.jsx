@@ -1,6 +1,6 @@
 import './App.css'
 import { GlobalSCSS } from './GlobalSCSS'
-import { Home } from "../src/pages/Home/Home.jsx"
+import { Home } from "../src/Pages/Home/Home.jsx"
 
 function App() {
 
