@@ -106,6 +106,7 @@ export const LoadButtonNews = styled.button`
     background-color: rgba(0, 0, 0, 0);
     transition: all 0.5s;
     cursor: pointer;
+    margin-bottom: 2rem;
 
         :hover {
             -webkit-transform: scale(1.2);
