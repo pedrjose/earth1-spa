@@ -24,11 +24,13 @@ export function Home() {
     const [blueCardsRow, setBlueCardRow] = useState([]);
 
     const loadUpNewArticlesRow = () => {
-        if (articleButton === 0) {
-            setArticleButton((prevState) => prevState + 5);
-        }
-        else {
-            setArticleButton((prevState) => prevState + 4);
+        if (props) {
+            if (articleButton === 0) {
+                setArticleButton((prevState) => prevState + 5);
+            }
+            else {
+                setArticleButton((prevState) => prevState + 4);
+            }
         }
     }
 
@@ -41,7 +43,7 @@ export function Home() {
                 setBlueCardRow(newRows);
             }
             else {
-                alert('No more home news!');
+                alert(`There's not more homepage articles!`);
             }
         }
     }, [articleButton])
