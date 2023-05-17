@@ -1,12 +1,22 @@
 import { useState, useEffect } from "react";
+
 import { getAllArticles } from "../../Service/cards.service";
+
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { TrendingCard, BlueNews } from "../../Components/Card/NewsCards";
-import { news } from "../../Mock/Datas.js";
-import down from "../../assets/images/png/down.png";
 import { ToCenter, LoadButtonNews } from "../../Components/Card/NewsCardsSCSS";
 
+import { manipulateState } from "../../Service/manipulate.service";
+
+import { WarningModal } from "../../Components/Modal/WarningModal/WarningModal";
+
+import { news } from "../../Mock/Datas.js";
+
+import down from "../../assets/images/png/down.png";
+
 export function Home() {
+    const [warning, setWarning] = useState(false);
+
     const [props, setProps] = useState(false);
     const [articles, setArticles] = useState([]);
 
@@ -43,13 +53,14 @@ export function Home() {
                 setBlueCardRow(newRows);
             }
             else {
-                alert(`There's not more homepage articles!`);
+                setWarning(true);
             }
         }
     }, [articleButton])
 
     return (
         <>
+            <WarningModal props={warning}/>
             <Navbar />
             <TrendingCard props={props ? articles[0] : news[0]} />
             <BlueNews props={props ? [articles[1], articles[2], articles[3], articles[4]] : [news[1], news[2], news[3], news[4
