@@ -5,26 +5,29 @@ import { BackgroundModal, ModalCard } from "../GlobalModalSCSS";
 import warning from "../../../assets/images/png/warning.png";
 
 export function WarningModal({ props }) {
+    const [activate, setActivate] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
-    const [controller, setController] = useState(false);
 
     const manipulateModal = () => {
         if (isOpen) {
             setIsOpen(false);
         }
+
         if (!isOpen) {
             setIsOpen(true);
+            setActivate(true);
         }
     }
 
-    if (!props) {
-        return null
-    }
+    useEffect(() => {
+        if (props.modalCall !== 0 && !isOpen && !activate) {
+            manipulateModal();
+        }
 
-    if (props && !isOpen && !controller) {
-        setController(true);
-        manipulateModal();
-    }
+        if (props.modalCall !== 0 && activate) {
+            manipulateModal();
+        }
+    }, [props.modalCall])
 
     if (!isOpen) {
         return null
@@ -35,7 +38,7 @@ export function WarningModal({ props }) {
             <BackgroundModal>
                 <ModalCard>
                     <img src={warning} alt="Warning Image" />
-                    <p>Ops... Trends Over!</p>
+                    <p>{props.message}</p>
                     <button onClick={manipulateModal}>Ok</button>
                 </ModalCard>
             </BackgroundModal></>
