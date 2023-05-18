@@ -15,8 +15,6 @@ import { news } from "../../Mock/Datas.js";
 import down from "../../assets/images/png/down.png";
 
 export function Home() {
-    const [warning, setWarning] = useState(false);
-
     const [props, setProps] = useState(false);
     const [articles, setArticles] = useState([]);
 
@@ -44,6 +42,8 @@ export function Home() {
         }
     }
 
+    const [warning, setWarning] = useState(0);
+
     useEffect(() => {
         const newRow = articles.slice(articleButton, articleButton + 4);
         const newRows = [...blueCardsRow, newRow];
@@ -53,14 +53,15 @@ export function Home() {
                 setBlueCardRow(newRows);
             }
             else {
-                setWarning(true);
+                setWarning((prevState) => prevState + 1);
             }
         }
     }, [articleButton])
 
+
     return (
         <>
-            <WarningModal props={warning}/>
+            <WarningModal props={{ modalCall: warning, message: "Ops... Trends Are Over!" }} />
             <Navbar />
             <TrendingCard props={props ? articles[0] : news[0]} />
             <BlueNews props={props ? [articles[1], articles[2], articles[3], articles[4]] : [news[1], news[2], news[3], news[4
