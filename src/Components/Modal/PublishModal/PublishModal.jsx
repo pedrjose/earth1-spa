@@ -10,7 +10,7 @@ export function PublishModal() {
                     <b><p>Publish Articles</p></b>
                     <input type="text" placeholder="Article Title" />
                     <input type="text" placeholder="Article Content" />
-                    <input type="text" placeholder="Article Banner Url Image" />
+                    <input type="text" placeholder="URL Banner (1920x1080)" />
                     <button>Submit</button>
                 </ModalCard>
             </BackgroundModal>

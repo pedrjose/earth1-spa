@@ -1,17 +1,10 @@
 import { useState, useEffect } from "react";
-
 import { getAllArticles } from "../../Service/cards.service";
-
 import { Navbar } from "../../Components/Navbar/Navbar";
 import { TrendingCard, BlueNews } from "../../Components/Card/NewsCards";
 import { ToCenter, LoadButtonNews } from "../../Components/Card/NewsCardsSCSS";
-
-import { manipulateState } from "../../Service/manipulate.service";
-
 import { WarningModal } from "../../Components/Modal/WarningModal/WarningModal";
-
 import { news } from "../../Mock/Datas.js";
-
 import down from "../../assets/images/png/down.png";
 
 export function Home() {

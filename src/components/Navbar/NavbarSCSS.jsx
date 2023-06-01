@@ -25,7 +25,7 @@ export const Earth1Logo = styled.img`
 export const ButtonBox = styled.div`
     display: flex;
     margin-right: 2.5rem;
-    gap: 1rem;
+    gap: 1.5rem;
 
     button {
         padding: 0.4rem;
@@ -39,4 +39,28 @@ export const ButtonBox = styled.div`
             transform: rotateZ(360deg);
         }
     }
+
+    span {
+        input {
+            margin-left: -1.5rem;
+            margin-top: .8rem;
+            height: 1rem;
+            width: 10rem;
+            color: #F03355;
+            font-size: 16px;
+            line-height: 20px;
+            
+            border-radius: 4px;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            background: rgb(251, 251, 251);
+            transition: all 0.1s ease 0s;
+                :focus{
+                    border: 2px solid rgb(124, 138, 255);
+                }
+                :hover {
+                    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+                }   
+            }
+        }
 `;
