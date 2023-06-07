@@ -10,6 +10,7 @@ import publish from "../../assets/images/png/publish.png";
 import search from "../../assets/images/png/search.png";
 import account from "../../assets/images/png/account.png";
 import back from "../../assets/images/png/back.png";
+import profileButton from "../../assets/images/png/profileButton.png"
 import { Profile } from "../../Pages/Profile/Profile";
 
 export function Navbar() {
@@ -60,7 +61,7 @@ export function Navbar() {
             <Nav>
                 <Link to="/"><Earth1Logo src={logo} alt="Earth-1 Platform Logo" /></Link>
                 {publishModal ? PublishModal() : null}
-                
+
                 {searchModal ? SearchModal(navigate, searchTitle, setSearchTitle) : null}
 
                 {userModal ? UserModal(close, navigate, errorLogged, setErrorLogged, username, password, setUsername, setPassword) : null}
@@ -68,15 +69,17 @@ export function Navbar() {
                 <ButtonBox>
                     {publishModal || searchModal || userModal ? <button onClick={close} style={{ zIndex: 2000 }}><img src={back} /></button> : null}
 
-                    <button onClick={() => setPublishModal(true)}><img src={publish} alt="Publish Article Button" /></button>
-
-                    <button onClick={() => navigate(`/search/${searchTitle}`)}><img src={search} alt="Search Article Button" /></button>
-
                     <span>
                         <input type="text" placeholder="Search (Ex.: Marvel)" onChange={handleChange} />
                     </span>
-                    
-                    <button onClick={logged ? () => navigate('/profile') : () => setUserModal(true)}><img src={account} alt="Login or Sign Up Button" /></button>
+
+                    <button onClick={() => navigate(`/search/${searchTitle}`)}><img src={search} alt="Search Article Button" /></button>
+
+                    {logged === 'true' ? <button onClick={() => setPublishModal(true)}><img src={publish} alt="Publish Article Button" /></button> : null}
+
+                    {logged === 'false' || !logged ? <button onClick={() => setUserModal(true)}><img src={account} alt="Login or Sign Up Button" /></button> : null}
+
+                    {logged === 'true' ? <button onClick={() => navigate(`/profile`)}><img src={profileButton} alt="Open Profile Button" /></button> : null}
                 </ButtonBox>
             </Nav >
         </>

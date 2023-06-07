@@ -48,6 +48,7 @@ export const MoveToTheCenter = styled.section`
             border-radius: 20px;
             width: 13rem;
             height: 4rem;
+            margin-bottom: 1rem;
             box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
             :hover {
@@ -82,7 +83,6 @@ export const MoveToTheCenter = styled.section`
     div {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
     }
 
     div {
@@ -91,7 +91,6 @@ export const MoveToTheCenter = styled.section`
             align-items: center;
             justify-content: center;
             flex-direction: row;
-            
             gap: 1rem;
 
             input {
@@ -110,6 +109,7 @@ export const MoveToTheCenter = styled.section`
                 appearance: none;
                 transition: border 0.15s ease 0s;
                 margin-bottom: 1.5rem;
+                margin-top: -1.5rem;
 
                 :focus{
                     outline: none;
@@ -135,6 +135,7 @@ export const MoveToTheCenter = styled.section`
                 font-size: 12px;
                 font-weight: 500;
                 margin-bottom: 1.5rem;
+                margin-top: -1.5rem;
         
                 :hover {
                     background-color: #33F03C;
