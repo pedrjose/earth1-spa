@@ -12,6 +12,7 @@ export const CommentStyle = styled.article`
     height: 4.5rem;
     border-radius: 15px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    margin-bottom: 1rem;
     
     h4 {
         font-size: 1rem;

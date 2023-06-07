@@ -22,6 +22,7 @@ export function UserModal(close, navigate, errorLogged, setErrorLogged, username
             setErrorLogged(false);
             localStorage.setItem('jwt', response.token);
             localStorage.setItem('user', response.loggedUser);
+            localStorage.setItem('status', true);
             navigate('/profile');
             close();
         }

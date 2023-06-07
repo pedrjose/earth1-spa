@@ -8,12 +8,21 @@ import { news } from "../../Mock/Datas.js";
 import down from "../../assets/images/png/down.png";
 
 export function Home() {
+    const [logged, setLogged] = useState(localStorage.getItem('status'));
+
+    useEffect(() => {
+        if (logged === null) {
+            localStorage.setItem('status', false);
+            setLogged(false);
+        }
+    }, [])
+
     const [props, setProps] = useState(false);
     const [articles, setArticles] = useState([]);
 
     const generateProps = async () => {
         const response = await getAllArticles();
-        setArticles(response.data.results);
+        setArticles(response.results);
         setProps(true);
     }
 
@@ -50,7 +59,6 @@ export function Home() {
             }
         }
     }, [articleButton])
-
 
     return (
         <>

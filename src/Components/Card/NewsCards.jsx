@@ -1,5 +1,5 @@
 import { news } from "../../Mock/Datas";
-import { Trending, ToCenter, BlueCard, BlueNewsBox, LoadButtonNews } from "./NewsCardsSCSS";
+import { Trending, ToCenter, BlueCard, BlueNewsBox, LoadButtonNews, YellowCard } from "./NewsCardsSCSS";
 import down from "../../assets/images/png/down.png"
 import { Link } from "react-router-dom";
 
@@ -38,6 +38,17 @@ export const SingleCard = ({ props }) => {
                     <p>{props.content.slice(0, 25)}<strong>...</strong></p>
                 </BlueCard>
             </Link >
+        </>
+    )
+}
+
+export const ProfileCard = ({ props }) => {
+    return (
+        <>
+            <YellowCard>
+                <h2>{props.title.slice(0, 15)}...</h2>
+                <button>Delete</button>
+            </YellowCard>
         </>
     )
 }
