@@ -23,21 +23,31 @@ export function Navbar() {
     const [userModal, setUserModal] = useState(false);
 
     // publish
-    // ...
+    const [publishAlert, setPublishAlert] = useState(false);
+    const [titleArticle, setTitleArticle] = useState("");
+    const [contentArticle, setContentArticle] = useState("");
+    const [bannerArticle, setBannerArticle] = useState("");
 
-    // search
+    // Search
     const [searchTitle, setSearchTitle] = useState("");
 
     const handleChange = (event) => {
         setSearchTitle(event.target.value);
     }
 
-    // login
+    // User Modal
     const [errorLogged, setErrorLogged] = useState(false);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    //
+    const [signUpWarning, setSignUpWarning] = useState({ status: true, message: false });
+    const [upName, setUpName] = useState("");
+    const [upUsername, setUpUsername] = useState("");
+    const [upPassword, setUpPassword] = useState("");
+    const [upAvatar, setUpAvatar] = useState("");
+    const [upBanner, setUpBanner] = useState("");
+
+    // Warning Modal
     const [closeModal, setCloseModal] = useState(0);
 
     const close = () => {
@@ -60,11 +70,11 @@ export function Navbar() {
         <>
             <Nav>
                 <Link to="/"><Earth1Logo src={logo} alt="Earth-1 Platform Logo" /></Link>
-                {publishModal ? PublishModal() : null}
+                {publishModal ? PublishModal(titleArticle, setTitleArticle, contentArticle, setContentArticle, bannerArticle, setBannerArticle, publishAlert, setPublishAlert, navigate) : null}
 
                 {searchModal ? SearchModal(navigate, searchTitle, setSearchTitle) : null}
 
-                {userModal ? UserModal(close, navigate, errorLogged, setErrorLogged, username, password, setUsername, setPassword) : null}
+                {userModal ? UserModal(close, navigate, errorLogged, setErrorLogged, username, password, setUsername, setPassword, upName, setUpName, upUsername, setUpUsername, upPassword, setUpPassword, upAvatar, setUpAvatar, upBanner, setUpBanner, signUpWarning, setSignUpWarning) : null}
 
                 <ButtonBox>
                     {publishModal || searchModal || userModal ? <button onClick={close} style={{ zIndex: 2000 }}><img src={back} /></button> : null}

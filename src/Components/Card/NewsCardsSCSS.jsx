@@ -126,44 +126,39 @@ export const YellowCard = styled.div`
     justify-content: center;
     border-radius: 15px;
     height: 5rem;
-    width: 25rem;
+    width: 40rem;
     gap: 1rem;
     margin-top: 1rem;
     font-family: 'Asap Condensed', sans-serif;
-    background-color: #F03355;
-    color: white;
+    background-color: #F0E233;
+    color: black;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 
     button {
+        
+        display: inline-block;
         outline: 0;
-        grid-gap: 8px;
-        align-items: center;
-        background-color: #F0E233;
-        color: red;
-        border: 1px solid red;
-        border-radius: 4px;
+        text-align: center;
         cursor: pointer;
-        display: inline-flex;
-        flex-shrink: 0;
-        font-size: 16px;
-        gap: 8px;
-        justify-content: center;
-        line-height: 1.5;
-        overflow: hidden;
-        padding: 12px 16px;
-        text-decoration: none;
-        text-overflow: ellipsis;
-        transition: all .14s ease-out;
-        height: 2rem;
-        white-space: nowrap;
+        height: 34px;
+        padding: 0 13px;
+        color: white;
+        vertical-align: top;
+        border-radius: 3px;
+        border: 1px solid transparent;
+        transition: all .3s ease;
+        background: #F03355;
+        border-color: #F03355;;
+        font-weight: 600;
+        text-transform: uppercase;
+        line-height: 16px;
+        font-size: 11px;
         :hover {
-                box-shadow: 4px 4px 0 red;
-                transform: translate(-4px,-4px);
-            }
-        :focus-visible{
-                outline-offset: 1px;
-            }
-                
+            background: #FF0000;
+            border-color: #FF0000;
+            color: white;
+            box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+        }          
     }
 
     :hover {

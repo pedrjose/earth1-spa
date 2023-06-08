@@ -1,7 +1,10 @@
 import { news } from "../../Mock/Datas";
 import { Trending, ToCenter, BlueCard, BlueNewsBox, LoadButtonNews, YellowCard } from "./NewsCardsSCSS";
+import { deleteArticle } from "../../Service/user.service";
 import down from "../../assets/images/png/down.png"
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { WarningModal } from "../Modal/WarningModal/WarningModal";
 
 const baseUrl = `/article/`;
 
@@ -43,11 +46,34 @@ export const SingleCard = ({ props }) => {
 }
 
 export const ProfileCard = ({ props }) => {
+    const token = localStorage.getItem('jwt');
+    const id = props.id;
+
+    const [warning, setWarning] = useState(0);
+    const [messageWarning, setMessageWarning] = useState("");
+
+    const activateWarning = () => {
+        setWarning((prevState) => prevState + 1);
+    }
+
+    const deleteMyArticle = async (id, token) => {
+        const response = await deleteArticle(id, token);
+
+        if (response.status) {
+            window.location.reload();
+        } else {
+            setMessageWarning(response.message)
+            activateWarning();
+        }
+
+    }
+
     return (
         <>
+            <WarningModal props={{ modalCall: warning, message: messageWarning }} />
             <YellowCard>
-                <h2>{props.title.slice(0, 15)}...</h2>
-                <button>Delete</button>
+                <h2>{props.title.slice(0, 40)}...</h2>
+                <button onClick={() => deleteMyArticle(id, token)}>Delete</button>
             </YellowCard>
         </>
     )

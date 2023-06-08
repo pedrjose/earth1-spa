@@ -89,6 +89,16 @@ export function Article() {
         }
     }
 
+    const [pageTitle, setPageTitle] = useState('Loading...');
+
+    useEffect(() => {
+        if (pageArticle) {
+            setPageTitle(pageArticle.title);
+            document.title = pageTitle;
+        }
+    }, [pageArticle])
+
+
     return (
         <>
             <WarningModal props={{ modalCall: warning, message: noticeInformation }} />
