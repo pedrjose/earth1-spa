@@ -20,6 +20,12 @@ export function SearchPage() {
         generateSearchByTitle(title);
     }, [title])
 
+    const [pageTitle, setPageTitle] = useState('Search');
+
+    useEffect(() => {
+        document.title = pageTitle;
+    }, [])
+
     return (
         <>
             <Navbar />

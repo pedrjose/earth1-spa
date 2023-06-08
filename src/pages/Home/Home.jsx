@@ -60,6 +60,12 @@ export function Home() {
         }
     }, [articleButton])
 
+    const [pageTitle, setPageTitle] = useState('Earth-1');
+
+    useEffect(() => {
+        document.title = pageTitle;
+    }, [])
+
     return (
         <>
             <WarningModal props={{ modalCall: warning, message: "Ops... Trends Are Over!" }} />

@@ -31,10 +31,18 @@ export function Profile() {
     const fillArticles = async () => {
         const profileArticles = await findUserArticles(localStorage.getItem('jwt'));
 
-        if (profileArticles) {
+        if (profileArticles.length > 0) {
             setUserArticles(profileArticles);
+        } else {
+            setUserArticles(false);
         }
     }
+
+    const [pageTitle, setPageTitle] = useState('Profile');
+
+    useEffect(() => {
+        document.title = pageTitle;
+    }, [])
 
     return (
         <>
@@ -46,14 +54,14 @@ export function Profile() {
                     <h1>{user.name}</h1>
                 </span> : null}
                 <div>
-                    {userArticles.length > 0 ?
-                        userArticles.map((item, index) => {
-                            return <ProfileCard props={item} key={index} />
-                        }) : <p>You don't have any articles published yet!</p>}
+                    {userArticles && user ? userArticles.map((item, index) => {
+                        return <ProfileCard props={item} key={index} />
+                    }) : null}
                 </div>
-                <section>
-                    <button onClick={() => signOut()}>Sign Out</button>
-                </section>
+                {user ? <section>
+                    {<button onClick={() => signOut()}>Sign Out</button>}
+                </section> : null}
+                {localStorage.getItem('status') === 'false' && !user ? <img src={expired} alt="Expired Image" /> : null}
             </ProfileBox>
         </>
     )
