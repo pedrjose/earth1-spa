@@ -1,7 +1,7 @@
 import './App.css'
 import { GlobalSCSS } from './GlobalSCSS'
 import { Home } from "../src/Pages/Home/Home.jsx"
-import { Article } from './Pages/News/News.jsx'
+import { Article } from './Pages/News/News'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { SearchPage } from './Pages/Search/Search.jsx'
 import { Profile } from './Pages/Profile/Profile.jsx'
