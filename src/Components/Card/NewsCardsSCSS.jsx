@@ -6,7 +6,7 @@ export const Trending = styled.div`
     width: 47rem;
     border-radius: 15px;
     border-style: none;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
