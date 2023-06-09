@@ -1,12 +1,12 @@
 import './App.css'
 import { GlobalSCSS } from './GlobalSCSS'
 import { Home } from "../src/Pages/Home/Home.jsx"
-import { Article } from './Pages/News/News'
+import { Article } from './Pages/News/News.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { SearchPage } from './Pages/Search/Search'
-import { Profile } from './Pages/Profile/Profile'
-import { NoScreen } from './Components/Screen/Screen'
-import { NotFound } from './Components/NotFound/NotFound'
+import { SearchPage } from './Pages/Search/Search.jsx'
+import { Profile } from './Pages/Profile/Profile.jsx'
+import { NoScreen } from './Components/Screen/Screen.jsx'
+import { NotFound } from './Components/NotFound/NotFound.jsx'
 import { useState } from 'react'
 import { useEffect } from 'react'
 
