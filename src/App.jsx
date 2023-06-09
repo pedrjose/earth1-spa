@@ -1,6 +1,6 @@
 import './App.css'
 import { GlobalSCSS } from './GlobalSCSS'
-import { Home } from "../src/Pages/Home/Home.jsx"
+import { Home } from "./Pages/Home/Home"
 import { Article } from './Pages/News/News'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { SearchPage } from './Pages/Search/Search'
